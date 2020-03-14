@@ -1,0 +1,295 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MainActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.android.examdutyalterationhelper</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MainActivity (com.example.android.examdutyalterationhelper)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 35)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MainActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$3$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 57)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.android.examdutyalterationhelper;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import androidx.annotation.NonNull;
+<i>4</i>&nbsp;import androidx.appcompat.app.AppCompatActivity;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import android.content.Intent;
+<i>7</i>&nbsp;import android.os.Bundle;
+<i>8</i>&nbsp;import android.util.Patterns;
+<i>9</i>&nbsp;import android.view.View;
+<i>10</i>&nbsp;import android.widget.EditText;
+<i>11</i>&nbsp;import android.widget.TextView;
+<i>12</i>&nbsp;import android.widget.Toast;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;import com.google.android.gms.tasks.OnCompleteListener;
+<i>15</i>&nbsp;import com.google.android.gms.tasks.Task;
+<i>16</i>&nbsp;import com.google.android.material.floatingactionbutton.FloatingActionButton;
+<i>17</i>&nbsp;import com.google.firebase.auth.AuthResult;
+<i>18</i>&nbsp;import com.google.firebase.auth.FirebaseAuth;
+<i>19</i>&nbsp;import com.google.firebase.database.DataSnapshot;
+<i>20</i>&nbsp;import com.google.firebase.database.DatabaseError;
+<i>21</i>&nbsp;import com.google.firebase.database.DatabaseReference;
+<i>22</i>&nbsp;import com.google.firebase.database.FirebaseDatabase;
+<i>23</i>&nbsp;import com.google.firebase.database.ValueEventListener;
+<i>24</i>&nbsp;
+<b class="nc"><i>25</i>&nbsp;public class MainActivity extends AppCompatActivity {</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    protected EditText emailEditText,pwdEditText;
+<i>28</i>&nbsp;    protected TextView signIn,forgotPwd;
+<i>29</i>&nbsp;    protected FloatingActionButton floatButtonSignIn;
+<i>30</i>&nbsp;    private FirebaseAuth mAuth;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Override
+<i>33</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>34</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>35</i>&nbsp;        setContentView(R.layout.activity_main);</b>
+<i>36</i>&nbsp;
+<b class="nc"><i>37</i>&nbsp;        emailEditText = findViewById(R.id.email_signin);</b>
+<b class="nc"><i>38</i>&nbsp;        pwdEditText = findViewById(R.id.pwd_signin);</b>
+<b class="nc"><i>39</i>&nbsp;        signIn = findViewById(R.id.signin_textview_loginpage);</b>
+<b class="nc"><i>40</i>&nbsp;        forgotPwd = findViewById(R.id.forgotpwd_textview_loginpage);</b>
+<b class="nc"><i>41</i>&nbsp;        floatButtonSignIn = findViewById(R.id.float_button_signin);</b>
+<i>42</i>&nbsp;
+<b class="nc"><i>43</i>&nbsp;        mAuth = FirebaseAuth.getInstance();</b>
+<i>44</i>&nbsp;
+<b class="nc"><i>45</i>&nbsp;        floatButtonSignIn.setOnClickListener(new View.OnClickListener() {</b>
+<i>46</i>&nbsp;            @Override
+<i>47</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>48</i>&nbsp;                userSignIn();</b>
+<i>49</i>&nbsp;            }
+<i>50</i>&nbsp;        });
+<i>51</i>&nbsp;
+<b class="nc"><i>52</i>&nbsp;        forgotPwd.setOnClickListener(new View.OnClickListener() {</b>
+<i>53</i>&nbsp;            @Override
+<i>54</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>55</i>&nbsp;                Intent i = new Intent(MainActivity.this,ForgotPassword.class);</b>
+<b class="nc"><i>56</i>&nbsp;                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);</b>
+<b class="nc"><i>57</i>&nbsp;                startActivity(i);</b>
+<i>58</i>&nbsp;            }
+<i>59</i>&nbsp;        });
+<b class="nc"><i>60</i>&nbsp;    }</b>
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;    public void userSignIn(){
+<b class="nc"><i>63</i>&nbsp;        final String email = emailEditText.getText().toString().trim();</b>
+<b class="nc"><i>64</i>&nbsp;        final String pwd = pwdEditText.getText().toString().trim();</b>
+<i>65</i>&nbsp;
+<b class="nc"><i>66</i>&nbsp;        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference(&quot;Users&quot;);</b>
+<i>67</i>&nbsp;
+<b class="nc"><i>68</i>&nbsp;        if(email.isEmpty()){</b>
+<b class="nc"><i>69</i>&nbsp;            emailEditText.setError(&quot;Email Is Required&quot;);</b>
+<b class="nc"><i>70</i>&nbsp;            emailEditText.requestFocus();</b>
+<b class="nc"><i>71</i>&nbsp;            return;</b>
+<i>72</i>&nbsp;        }
+<i>73</i>&nbsp;
+<b class="nc"><i>74</i>&nbsp;        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){</b>
+<b class="nc"><i>75</i>&nbsp;            emailEditText.setError(&quot;Enter A Valid Email Address&quot;);</b>
+<b class="nc"><i>76</i>&nbsp;            emailEditText.requestFocus();</b>
+<b class="nc"><i>77</i>&nbsp;            return;</b>
+<i>78</i>&nbsp;        }
+<i>79</i>&nbsp;
+<b class="nc"><i>80</i>&nbsp;        if(pwd.isEmpty()){</b>
+<b class="nc"><i>81</i>&nbsp;            pwdEditText.setError(&quot;Password Is Required&quot;);</b>
+<b class="nc"><i>82</i>&nbsp;            pwdEditText.requestFocus();</b>
+<b class="nc"><i>83</i>&nbsp;            return;</b>
+<i>84</i>&nbsp;        }
+<b class="nc"><i>85</i>&nbsp;        if(pwd.length()&lt;6){</b>
+<b class="nc"><i>86</i>&nbsp;            pwdEditText.setError(&quot;Password Should Be At Least 6 Characters&quot;);</b>
+<b class="nc"><i>87</i>&nbsp;            pwdEditText.requestFocus();</b>
+<b class="nc"><i>88</i>&nbsp;            return;</b>
+<i>89</i>&nbsp;        }
+<i>90</i>&nbsp;
+<b class="nc"><i>91</i>&nbsp;        mAuth.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener&lt;AuthResult&gt;() {</b>
+<i>92</i>&nbsp;            @Override
+<i>93</i>&nbsp;            public void onComplete(@NonNull Task&lt;AuthResult&gt; task) {
+<b class="nc"><i>94</i>&nbsp;                if(task.isSuccessful()){</b>
+<b class="nc"><i>95</i>&nbsp;                    if(mAuth.getCurrentUser().isEmailVerified()){</b>
+<b class="nc"><i>96</i>&nbsp;                        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {</b>
+<i>97</i>&nbsp;                            @Override
+<i>98</i>&nbsp;                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+<b class="nc"><i>99</i>&nbsp;                                String e = email.split(&quot;@&quot;)[0];</b>
+<b class="nc"><i>100</i>&nbsp;                                if(dataSnapshot.child(e).exists()){</b>
+<b class="nc"><i>101</i>&nbsp;                                    Users user = dataSnapshot.child(e).getValue(Users.class);</b>
+<b class="nc"><i>102</i>&nbsp;                                    Toast.makeText(MainActivity.this, &quot;Logged In Successfully&quot;, Toast.LENGTH_SHORT).show();</b>
+<b class="nc"><i>103</i>&nbsp;                                    Prevalent.currentOnlineUser = user;</b>
+<b class="nc"><i>104</i>&nbsp;                                    Prevalent.UserEmail = user.email;</b>
+<b class="nc"><i>105</i>&nbsp;                                    Intent i = new Intent(MainActivity.this,HomeActivity.class);</b>
+<b class="nc"><i>106</i>&nbsp;                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);</b>
+<b class="nc"><i>107</i>&nbsp;                                    startActivity(i);</b>
+<i>108</i>&nbsp;                                }
+<i>109</i>&nbsp;                            }
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;                            @Override
+<i>112</i>&nbsp;                            public void onCancelled(@NonNull DatabaseError databaseError) {
+<i>113</i>&nbsp;
+<i>114</i>&nbsp;                            }
+<i>115</i>&nbsp;                        });
+<i>116</i>&nbsp;                    }else{
+<b class="nc"><i>117</i>&nbsp;                        Toast.makeText(getApplicationContext(),&quot;Please Verify Your Email&quot;,Toast.LENGTH_LONG).show();</b>
+<i>118</i>&nbsp;                    }
+<i>119</i>&nbsp;                }else {
+<b class="nc"><i>120</i>&nbsp;                    Toast.makeText(getApplicationContext(),&quot;Invalid Credentials!!!&quot;,Toast.LENGTH_LONG).show();</b>
+<i>121</i>&nbsp;                }
+<i>122</i>&nbsp;            }
+<i>123</i>&nbsp;        });
+<b class="nc"><i>124</i>&nbsp;    }</b>
+<i>125</i>&nbsp;
+<i>126</i>&nbsp;    public void OpenSignUpPage(View view) {
+<b class="nc"><i>127</i>&nbsp;        startActivity(new Intent(MainActivity.this,SignUpActivity.class));</b>
+<b class="nc"><i>128</i>&nbsp;    }</b>
+<i>129</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-02-16 18:19</div>
+</div>
+</body>
+</html>

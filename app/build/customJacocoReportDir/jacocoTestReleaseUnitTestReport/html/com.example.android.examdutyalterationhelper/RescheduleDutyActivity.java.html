@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RescheduleDutyActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.android.examdutyalterationhelper</a> &gt; <span class="el_source">RescheduleDutyActivity.java</span></div><h1>RescheduleDutyActivity.java</h1><pre class="source lang-java linenums">package com.example.android.examdutyalterationhelper;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+<span class="nc" id="L23">public class RescheduleDutyActivity extends AppCompatActivity {</span>
+
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    DatabaseReference rescheduleDutiesRef;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="nc" id="L31">        super.onCreate(savedInstanceState);</span>
+<span class="nc" id="L32">        setContentView(R.layout.activity_reschedule_duty);</span>
+
+<span class="nc" id="L34">        rescheduleDutiesRef = FirebaseDatabase.getInstance().getReference().child(&quot;Reschedule Duty&quot;);</span>
+<span class="nc" id="L35">        recyclerView = (RecyclerView) findViewById(R.id.recycler_menu_reschedule);</span>
+<span class="nc" id="L36">        recyclerView.setHasFixedSize(true);</span>
+<span class="nc" id="L37">        layoutManager = new LinearLayoutManager(this);</span>
+<span class="nc" id="L38">        recyclerView.setLayoutManager(layoutManager);</span>
+<span class="nc" id="L39">    }</span>
+
+    @Override
+    protected void onStart() {
+<span class="nc" id="L43">        super.onStart();</span>
+
+
+<span class="nc" id="L46">        final FirebaseRecyclerOptions&lt;RescheduleDuties&gt; options = new FirebaseRecyclerOptions.Builder&lt;RescheduleDuties&gt;()</span>
+<span class="nc" id="L47">                .setQuery(rescheduleDutiesRef,RescheduleDuties.class)</span>
+<span class="nc" id="L48">                .build();</span>
+
+<span class="nc" id="L50">        FirebaseRecyclerAdapter&lt;RescheduleDuties, RescheduleDutyViewHolder&gt; adapter = new FirebaseRecyclerAdapter&lt;RescheduleDuties, RescheduleDutyViewHolder&gt;(options) {</span>
+            @Override
+            protected void onBindViewHolder(@NonNull final RescheduleDutyViewHolder holder, int position, @NonNull RescheduleDuties model) {
+<span class="nc" id="L53">                holder.dutyName.setText(model.getDutyName());</span>
+<span class="nc" id="L54">                holder.dutyDate.setText(model.getDutyDate());</span>
+<span class="nc" id="L55">                holder.startTime.setText(model.getStartTime());</span>
+<span class="nc" id="L56">                holder.endtime.setText(model.getEndtime());</span>
+<span class="nc" id="L57">                holder.incharge.setText(model.getIncharge());</span>
+<span class="nc" id="L58">                holder.phone.setText(model.getPhone());</span>
+
+<span class="nc" id="L60">                holder.itemView.setOnClickListener(new View.OnClickListener() {</span>
+                    @Override
+                    public void onClick(View v) {
+<span class="nc" id="L63">                        CharSequence options[] = new CharSequence[]{</span>
+                                &quot;Yes&quot;,
+                                &quot;No&quot;
+                        };
+
+<span class="nc" id="L68">                        AlertDialog.Builder builder = new AlertDialog.Builder(RescheduleDutyActivity.this);</span>
+<span class="nc" id="L69">                        builder.setTitle(&quot;Accept Reschedule&quot;);</span>
+
+<span class="nc" id="L71">                        builder.setItems(options, new DialogInterface.OnClickListener() {</span>
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                                if(which == 0){</span>
+
+                                }else {
+<span class="nc" id="L77">                                    finish();</span>
+                                }
+<span class="nc" id="L79">                            }</span>
+                        });
+<span class="nc" id="L81">                    }</span>
+                });
+<span class="nc" id="L83">            }</span>
+
+            @NonNull
+            @Override
+            public RescheduleDutyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+<span class="nc" id="L89">                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.reschedule_duty_layout,viewGroup,false);</span>
+<span class="nc" id="L90">                RescheduleDutyViewHolder holder = new RescheduleDutyViewHolder(view);</span>
+<span class="nc" id="L91">                return holder;</span>
+            }
+
+        };
+<span class="nc" id="L95">        recyclerView.setAdapter(adapter);</span>
+<span class="nc" id="L96">        adapter.startListening();</span>
+<span class="nc" id="L97">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

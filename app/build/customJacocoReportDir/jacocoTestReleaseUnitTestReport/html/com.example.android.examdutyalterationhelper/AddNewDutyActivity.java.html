@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AddNewDutyActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.android.examdutyalterationhelper</a> &gt; <span class="el_source">AddNewDutyActivity.java</span></div><h1>AddNewDutyActivity.java</h1><pre class="source lang-java linenums">package com.example.android.examdutyalterationhelper;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+
+<span class="nc" id="L33">public class AddNewDutyActivity extends AppCompatActivity {</span>
+
+    EditText startTime,endTime,examDetail,remarks,date;
+    Spinner incharge1,incharge2;
+    Button addNewDutyBtn;
+    private DatabaseReference databaseDuty,databaseUsers;
+<span class="nc" id="L39">    private Calendar myCalendar = Calendar.getInstance();</span>
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="nc" id="L43">        super.onCreate(savedInstanceState);</span>
+<span class="nc" id="L44">        setContentView(R.layout.activity_add_new_duty);</span>
+
+<span class="nc" id="L46">        examDetail = (EditText) findViewById(R.id.add_duty_name);</span>
+<span class="nc" id="L47">        date = (EditText) findViewById(R.id.add_duty_date);</span>
+<span class="nc" id="L48">        startTime = (EditText) findViewById(R.id.add_duty_start_time);</span>
+<span class="nc" id="L49">        endTime = (EditText) findViewById(R.id.add_duty_end_time);</span>
+<span class="nc" id="L50">        incharge1 = (Spinner) findViewById(R.id.add_duty_incharge1);</span>
+<span class="nc" id="L51">        incharge2 = (Spinner) findViewById(R.id.add_duty_incharge2);</span>
+<span class="nc" id="L52">        remarks = (EditText) findViewById(R.id.add_duty_remarks);</span>
+
+<span class="nc" id="L54">        databaseDuty = FirebaseDatabase.getInstance().getReference(&quot;Duty&quot;);</span>
+<span class="nc" id="L55">        databaseUsers = FirebaseDatabase.getInstance().getReference(&quot;Users&quot;);</span>
+
+<span class="nc" id="L57">        databaseUsers.addValueEventListener(new ValueEventListener() {</span>
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+<span class="nc" id="L60">                final List&lt;String&gt; usersList1 = new ArrayList&lt;String&gt;();</span>
+<span class="nc" id="L61">                final List&lt;String&gt; usersList2 = new ArrayList&lt;String&gt;();</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){</span>
+<span class="nc" id="L63">                    String name = dataSnapshot1.child(&quot;name&quot;).getValue(String.class);</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                    if (name!=&quot;Admin&quot;){</span>
+<span class="nc" id="L65">                        usersList1.add(name);</span>
+<span class="nc" id="L66">                        usersList2.add(name);</span>
+                    }
+
+<span class="nc" id="L69">                }</span>
+<span class="nc" id="L70">                ArrayAdapter&lt;String&gt; arrayAdapter1 = new ArrayAdapter&lt;String&gt;(AddNewDutyActivity.this, android.R.layout.simple_spinner_item, usersList1);</span>
+<span class="nc" id="L71">                arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</span>
+<span class="nc" id="L72">                incharge1.setAdapter(arrayAdapter1);</span>
+
+<span class="nc" id="L74">                ArrayAdapter&lt;String&gt; arrayAdapter2 = new ArrayAdapter&lt;String&gt;(AddNewDutyActivity.this, android.R.layout.simple_spinner_item, usersList2);</span>
+<span class="nc" id="L75">                arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</span>
+<span class="nc" id="L76">                incharge2.setAdapter(arrayAdapter2);</span>
+<span class="nc" id="L77">            }</span>
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+<span class="nc" id="L82">            }</span>
+        });
+
+<span class="nc" id="L85">        startTime.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L88">                Calendar mcurrentTime = Calendar.getInstance();</span>
+<span class="nc" id="L89">                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);</span>
+<span class="nc" id="L90">                int minute = mcurrentTime.get(Calendar.MINUTE);</span>
+                TimePickerDialog mTimePicker;
+<span class="nc" id="L92">                mTimePicker = new TimePickerDialog(AddNewDutyActivity.this, new TimePickerDialog.OnTimeSetListener() {</span>
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+<span class="nc" id="L95">                        startTime.setText( selectedHour + &quot;:&quot; + selectedMinute);</span>
+<span class="nc" id="L96">                    }</span>
+                }, hour, minute, true);//Yes 24 hour time
+<span class="nc" id="L98">                mTimePicker.setTitle(&quot;Select Time&quot;);</span>
+<span class="nc" id="L99">                mTimePicker.show();</span>
+<span class="nc" id="L100">            }</span>
+        });
+
+<span class="nc" id="L103">        endTime.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L106">                Calendar mcurrentTime = Calendar.getInstance();</span>
+<span class="nc" id="L107">                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);</span>
+<span class="nc" id="L108">                int minute = mcurrentTime.get(Calendar.MINUTE);</span>
+                TimePickerDialog mTimePicker;
+<span class="nc" id="L110">                mTimePicker = new TimePickerDialog(AddNewDutyActivity.this, new TimePickerDialog.OnTimeSetListener() {</span>
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+<span class="nc" id="L113">                        endTime.setText( selectedHour + &quot;:&quot; + selectedMinute);</span>
+<span class="nc" id="L114">                    }</span>
+                }, hour, minute, true);//Yes 24 hour time
+<span class="nc" id="L116">                mTimePicker.setTitle(&quot;Select Time&quot;);</span>
+<span class="nc" id="L117">                mTimePicker.show();</span>
+<span class="nc" id="L118">            }</span>
+        });
+
+<span class="nc" id="L121">        final DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {</span>
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+<span class="nc" id="L126">                myCalendar.set(Calendar.YEAR, year);</span>
+<span class="nc" id="L127">                myCalendar.set(Calendar.MONTH, monthOfYear);</span>
+<span class="nc" id="L128">                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);</span>
+
+<span class="nc" id="L130">                String myFormat = &quot;MM/dd/yy&quot;;</span>
+<span class="nc" id="L131">                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);</span>
+<span class="nc" id="L132">                date.setText(sdf.format(myCalendar.getTime()));</span>
+<span class="nc" id="L133">            }</span>
+
+        };
+
+<span class="nc" id="L137">        date.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L140">                new DatePickerDialog(AddNewDutyActivity.this, datePickerListener, myCalendar</span>
+<span class="nc" id="L141">                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),</span>
+<span class="nc" id="L142">                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();</span>
+<span class="nc" id="L143">            }</span>
+        });
+
+<span class="nc" id="L146">        addNewDutyBtn = (Button) findViewById(R.id.add_new_duty_btn);</span>
+<span class="nc" id="L147">        addNewDutyBtn.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L150">                addDuty();</span>
+<span class="nc" id="L151">            }</span>
+        });
+<span class="nc" id="L153">    }</span>
+
+    private void addDuty() {
+        final String dutyDetailEditText,dutyDateEditText,startTimeEditText,endtimeEditText,incharge1EditText,incharge2EditText,remarksEditText;
+<span class="nc" id="L157">        dutyDetailEditText = examDetail.getText().toString().trim();</span>
+<span class="nc" id="L158">        dutyDateEditText = date.getText().toString().trim();</span>
+<span class="nc" id="L159">        startTimeEditText = startTime.getText().toString().trim();</span>
+<span class="nc" id="L160">        endtimeEditText = endTime.getText().toString().trim();</span>
+<span class="nc" id="L161">        incharge1EditText = incharge1.getSelectedItem().toString().trim();</span>
+<span class="nc" id="L162">        incharge2EditText = incharge2.getSelectedItem().toString().trim();</span>
+<span class="nc" id="L163">        remarksEditText = remarks.getText().toString().trim();</span>
+
+<span class="nc bnc" id="L165" title="All 2 branches missed.">        if(dutyDetailEditText.equals(&quot;&quot;)){</span>
+<span class="nc" id="L166">            examDetail.setError(&quot;Name is Required&quot;);</span>
+<span class="nc" id="L167">            examDetail.requestFocus();</span>
+<span class="nc" id="L168">            return;</span>
+        }
+
+<span class="nc bnc" id="L171" title="All 2 branches missed.">        if(dutyDateEditText.equals(&quot;&quot;)){</span>
+<span class="nc" id="L172">            date.setError(&quot;Date is Required&quot;);</span>
+<span class="nc" id="L173">            date.requestFocus();</span>
+<span class="nc" id="L174">            return;</span>
+        }
+
+<span class="nc bnc" id="L177" title="All 2 branches missed.">        if(startTimeEditText.equals(&quot;&quot;)){</span>
+<span class="nc" id="L178">            startTime.setError(&quot;Start Time is Required&quot;);</span>
+<span class="nc" id="L179">            startTime.requestFocus();</span>
+<span class="nc" id="L180">            return;</span>
+        }
+
+<span class="nc bnc" id="L183" title="All 2 branches missed.">        if(endtimeEditText.equals(&quot;&quot;)){</span>
+<span class="nc" id="L184">            endTime.setError(&quot;End Time is Required&quot;);</span>
+<span class="nc" id="L185">            endTime.requestFocus();</span>
+<span class="nc" id="L186">            return;</span>
+        }
+
+<span class="nc bnc" id="L189" title="All 4 branches missed.">        if(incharge1EditText.equals(incharge2EditText) || incharge2EditText.equals(incharge1EditText)){</span>
+
+<span class="nc" id="L191">            Toast.makeText(getApplicationContext(),&quot;Select Different Invigilators&quot;,Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L192">            return;</span>
+        }
+
+<span class="nc bnc" id="L195" title="All 2 branches missed.">        if(remarksEditText.equals(&quot;&quot;)){</span>
+<span class="nc" id="L196">            remarks.setError(&quot;Name is Required&quot;);</span>
+<span class="nc" id="L197">            remarks.requestFocus();</span>
+<span class="nc" id="L198">            return;</span>
+        }
+
+<span class="nc" id="L201">        Duties duties = new Duties(startTimeEditText,endtimeEditText,dutyDetailEditText,incharge1EditText,incharge2EditText,remarksEditText,dutyDateEditText);</span>
+<span class="nc" id="L202">        databaseDuty.child(dutyDetailEditText).setValue(duties).addOnCompleteListener(new OnCompleteListener&lt;Void&gt;() {</span>
+            @Override
+            public void onComplete(@NonNull Task&lt;Void&gt; task) {
+<span class="nc bnc" id="L205" title="All 2 branches missed.">                if(task.isSuccessful()){</span>
+<span class="nc" id="L206">                    Toast.makeText(getApplicationContext(),&quot;Duty Added Successfully&quot;,Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L207">                    Intent i = new Intent(AddNewDutyActivity.this,HomeActivity.class);</span>
+<span class="nc" id="L208">                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);</span>
+<span class="nc" id="L209">                    startActivity(i);</span>
+<span class="nc" id="L210">                }else{</span>
+<span class="nc" id="L211">                    Toast.makeText(getApplicationContext(),&quot;Duty Not Added&quot;,Toast.LENGTH_LONG).show();</span>
+                }
+<span class="nc" id="L213">            }</span>
+        });
+<span class="nc" id="L215">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

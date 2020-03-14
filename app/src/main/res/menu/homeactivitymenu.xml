@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/add_duty"
+        android:visible="false"
+        android:title="Add New Duty"/>
+    <item android:id="@+id/view_reschedule_requests"
+        android:visible="false"
+        android:title="Reschedule Requests"/>
+    <item android:id="@+id/sign_out"
+        android:title="Sign Out"/>
+</menu>

@@ -1,0 +1,228 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.android.examdutyalterationhelper"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:5:22-64
+12
+13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+14    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:25:5-79
+15-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:25:22-76
+16    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/95785ca351b6ce69c0a4dc407cc41a37/play-services-measurement-api-17.2.2/AndroidManifest.xml:24:5-68
+16-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/95785ca351b6ce69c0a4dc407cc41a37/play-services-measurement-api-17.2.2/AndroidManifest.xml:24:22-65
+17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+17-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
+17-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
+18    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+18-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:26:5-110
+18-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:26:22-107
+19
+20    <application
+20-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:7:5-26:19
+21        android:allowBackup="true"
+21-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:8:9-35
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.1.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/0c9dfe4bd212230fef523f660c8d880b/core-1.1.0/AndroidManifest.xml:24:18-86
+23        android:icon="@mipmap/ic_launcher"
+23-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:9:9-43
+24        android:label="@string/app_name"
+24-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:10:9-41
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:11:9-54
+26        android:supportsRtl="true"
+26-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:12:9-35
+27        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" >
+27-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:13:9-70
+28        <activity android:name="com.example.android.examdutyalterationhelper.RescheduleDutyActivity" />
+28-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:14:9-69
+28-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:14:19-57
+29        <activity android:name="com.example.android.examdutyalterationhelper.AddNewDutyActivity" />
+29-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:15:9-56
+29-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:15:19-53
+30        <activity android:name="com.example.android.examdutyalterationhelper.HomeActivity" />
+30-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:16:9-50
+30-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:16:19-47
+31        <activity android:name="com.example.android.examdutyalterationhelper.ForgotPassword" />
+31-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:17:9-52
+31-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:17:19-49
+32        <activity android:name="com.example.android.examdutyalterationhelper.SignUpActivity" />
+32-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:18:9-52
+32-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:18:19-49
+33        <activity android:name="com.example.android.examdutyalterationhelper.MainActivity" >
+33-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:19:9-25:20
+33-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:19:19-47
+34            <intent-filter>
+34-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:20:13-24:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:21:17-69
+35-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:21:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:23:17-77
+37-->/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:23:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <service
+41-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:29:9-35:19
+42            android:name="com.google.firebase.components.ComponentDiscoveryService"
+42-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:30:13-84
+43            android:directBootAware="true"
+43-->[com.google.firebase:firebase-common:19.3.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/aa2e6deabb787727c242f40ecb78b77c/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+44            android:exported="false" >
+44-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:31:13-37
+45            <meta-data
+45-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:32:13-34:85
+46                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+46-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:33:17-109
+47                android:value="com.google.firebase.components.ComponentRegistrar" />
+47-->[com.google.firebase:firebase-database:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/eced87c2a5920f8e85806889d24cdeeb/firebase-database-19.2.0/AndroidManifest.xml:34:17-82
+48            <meta-data
+48-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
+49                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+49-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
+50                android:value="com.google.firebase.components.ComponentRegistrar" />
+50-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
+51            <meta-data
+51-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/95785ca351b6ce69c0a4dc407cc41a37/play-services-measurement-api-17.2.2/AndroidManifest.xml:30:13-32:85
+52                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+52-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/95785ca351b6ce69c0a4dc407cc41a37/play-services-measurement-api-17.2.2/AndroidManifest.xml:31:17-139
+53                android:value="com.google.firebase.components.ComponentRegistrar" />
+53-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/95785ca351b6ce69c0a4dc407cc41a37/play-services-measurement-api-17.2.2/AndroidManifest.xml:32:17-82
+54            <meta-data
+54-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+55                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+55-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+56                android:value="com.google.firebase.components.ComponentRegistrar" />
+56-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+57        </service>
+58
+59        <activity
+59-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
+60            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+60-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
+61            android:excludeFromRecents="true"
+61-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
+62            android:exported="true"
+62-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
+63            android:launchMode="singleTask"
+63-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
+64            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+64-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.google.firebase:firebase-auth:19.2.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6fed8c0c0c8d3ff77cff76653ab6c9a5/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
+66
+67        <receiver
+67-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+68            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+68-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+69            android:exported="true"
+69-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+70            android:permission="com.google.android.c2dm.permission.SEND" >
+70-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+71            <intent-filter>
+71-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
+72                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+72-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
+72-->[com.google.firebase:firebase-iid:20.0.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/303de125d67c2a715a33072cea5f9464/firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
+73            </intent-filter>
+74        </receiver>
+75
+76        <activity
+76-->[com.google.android.gms:play-services-base:17.1.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b14c0f119f1b0ede734da2c960734210/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+77            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+77-->[com.google.android.gms:play-services-base:17.1.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b14c0f119f1b0ede734da2c960734210/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+78            android:exported="false"
+78-->[com.google.android.gms:play-services-base:17.1.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b14c0f119f1b0ede734da2c960734210/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+79            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+79-->[com.google.android.gms:play-services-base:17.1.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b14c0f119f1b0ede734da2c960734210/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+80
+81        <provider
+81-->[com.google.firebase:firebase-common:19.3.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/aa2e6deabb787727c242f40ecb78b77c/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+82            android:name="com.google.firebase.provider.FirebaseInitProvider"
+82-->[com.google.firebase:firebase-common:19.3.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/aa2e6deabb787727c242f40ecb78b77c/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+83            android:authorities="com.example.android.examdutyalterationhelper.firebaseinitprovider"
+83-->[com.google.firebase:firebase-common:19.3.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/aa2e6deabb787727c242f40ecb78b77c/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+84            android:exported="false"
+84-->[com.google.firebase:firebase-common:19.3.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/aa2e6deabb787727c242f40ecb78b77c/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+85            android:initOrder="100" />
+85-->[com.google.firebase:firebase-common:19.3.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/aa2e6deabb787727c242f40ecb78b77c/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+86
+87        <receiver
+87-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:29:9-33:20
+88            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+88-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:30:13-85
+89            android:enabled="true"
+89-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:31:13-35
+90            android:exported="false" >
+90-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:32:13-37
+91        </receiver>
+92        <receiver
+92-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:34:9-42:20
+93            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+93-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:35:13-100
+94            android:enabled="true"
+94-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:36:13-35
+95            android:exported="true"
+95-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:37:13-36
+96            android:permission="android.permission.INSTALL_PACKAGES" >
+96-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:38:13-69
+97            <intent-filter>
+97-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:39:13-41:29
+98                <action android:name="com.android.vending.INSTALL_REFERRER" />
+98-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:40:17-79
+98-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:40:25-76
+99            </intent-filter>
+100        </receiver>
+101
+102        <service
+102-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:44:9-47:40
+103            android:name="com.google.android.gms.measurement.AppMeasurementService"
+103-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:45:13-84
+104            android:enabled="true"
+104-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:46:13-35
+105            android:exported="false" />
+105-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:47:13-37
+106        <service
+106-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:48:9-52:72
+107            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+107-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:49:13-87
+108            android:enabled="true"
+108-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:50:13-35
+109            android:exported="false"
+109-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:51:13-37
+110            android:permission="android.permission.BIND_JOB_SERVICE" />
+110-->[com.google.android.gms:play-services-measurement:17.2.2] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/109b89ec216dc1a3edc1e09c1bf6d534/play-services-measurement-17.2.2/AndroidManifest.xml:52:13-69
+111
+112        <meta-data
+112-->[com.google.android.gms:play-services-basement:17.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b576f10abc9b5fb2b7ea4fe143093764/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+113            android:name="com.google.android.gms.version"
+113-->[com.google.android.gms:play-services-basement:17.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b576f10abc9b5fb2b7ea4fe143093764/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+114            android:value="@integer/google_play_services_version" />
+114-->[com.google.android.gms:play-services-basement:17.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/b576f10abc9b5fb2b7ea4fe143093764/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+115
+116        <provider
+116-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6d89086b30c7f22cb3b4de413c6e0d66/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+117            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6d89086b30c7f22cb3b4de413c6e0d66/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+118            android:authorities="com.example.android.examdutyalterationhelper.lifecycle-process"
+118-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6d89086b30c7f22cb3b4de413c6e0d66/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+119            android:exported="false"
+119-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6d89086b30c7f22cb3b4de413c6e0d66/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+120            android:multiprocess="true" />
+120-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/caches/transforms-2/files-2.1/6d89086b30c7f22cb3b4de413c6e0d66/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+121    </application>
+122
+123</manifest>

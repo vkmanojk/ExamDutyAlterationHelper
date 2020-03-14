@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.android.examdutyalterationhelper.SignUpActivityTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2020-03-14T13:38:58" hostname="manojkumar" time="0.031">
+  <properties/>
+  <testcase name="Emailcheck1" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.004"/>
+  <testcase name="Emailcheck2" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Emailcheck3" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Emailcheck4" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Emailcheck5" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Emailcheck6" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Emailcheck7" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="classcheck" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Pwdcheck1" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Pwdcheck2" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.002"/>
+  <testcase name="Pwdcheck3" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Phonecheck1" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.0"/>
+  <testcase name="Phonecheck2" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Phonecheck3" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Phonecheck4" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Phonecheck5" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.002"/>
+  <testcase name="Namecheck1" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Namecheck2" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <testcase name="Namecheck3" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.0"/>
+  <testcase name="Namecheck4" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.0"/>
+  <testcase name="Namecheck5" classname="com.example.android.examdutyalterationhelper.SignUpActivityTest" time="0.001"/>
+  <system-out><![CDATA[Testcase: 1 inititiated
+Testcase: 1 compiled 
+Testcase: 2 inititiated
+Testcase: 2 compiled 
+Testcase: 3 inititiated
+Testcase: 3 compiled 
+Testcase: 4 inititiated
+Testcase: 4 compiled 
+Testcase: 5 inititiated
+Testcase: 5 compiled 
+Testcase: 6 inititiated
+Testcase: 6 compiled 
+Testcase: 7 inititiated
+Testcase: 7 compiled 
+Testcase: 8 inititiated
+Testcase: 8 compiled 
+Testcase: 9 inititiated
+Testcase: 9 compiled 
+Testcase: 10 inititiated
+Testcase: 10 compiled 
+Testcase: 11 inititiated
+Testcase: 11 compiled 
+Testcase: 12 inititiated
+Testcase: 12 compiled 
+Testcase: 13 inititiated
+Testcase: 13 compiled 
+Testcase: 14 inititiated
+Testcase: 14 compiled 
+Testcase: 15 inititiated
+Testcase: 15 compiled 
+Testcase: 16 inititiated
+Testcase: 16 compiled 
+Testcase: 17 inititiated
+Testcase: 17 compiled 
+Testcase: 18 inititiated
+Testcase: 18 compiled 
+Testcase: 19 inititiated
+Testcase: 19 compiled 
+Testcase: 20 inititiated
+Testcase: 20 compiled 
+Testcase: 21 inititiated
+Testcase: 21 compiled 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

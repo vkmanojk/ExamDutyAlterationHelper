@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.android.examdutyalterationhelper.UsersTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-03-14T13:38:58" hostname="manojkumar" time="0.005">
+  <properties/>
+  <testcase name="getPhonecheck" classname="com.example.android.examdutyalterationhelper.UsersTest" time="0.001"/>
+  <testcase name="classcheck" classname="com.example.android.examdutyalterationhelper.UsersTest" time="0.001"/>
+  <testcase name="getEmailcheck" classname="com.example.android.examdutyalterationhelper.UsersTest" time="0.001"/>
+  <testcase name="getNamecheck" classname="com.example.android.examdutyalterationhelper.UsersTest" time="0.001"/>
+  <testcase name="setEmailcheck" classname="com.example.android.examdutyalterationhelper.UsersTest" time="0.0"/>
+  <system-out><![CDATA[Testcase: 1 inititiated
+Testcase: 1 compiled 
+Testcase: 2 inititiated
+Testcase: 2 compiled 
+Testcase: 3 inititiated
+Testcase: 3 compiled 
+Testcase: 4 inititiated
+Testcase: 4 compiled 
+Testcase: 5 inititiated
+Testcase: 5 compiled 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

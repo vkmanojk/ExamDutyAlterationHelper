@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewDutyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:paddingRight="20dp" >
+
+        <EditText
+            android:id="@+id/add_duty_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textNoSuggestions|text"
+            android:hint="Duty Name"/>
+
+        <EditText
+            android:id="@+id/add_duty_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textNoSuggestions|text"
+            android:hint="Date"/>
+
+        <EditText
+            android:id="@+id/add_duty_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textNoSuggestions|text"
+            android:hint="Start Time"/>
+
+        <EditText
+            android:id="@+id/add_duty_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textNoSuggestions|text"
+            android:hint="End Time"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/add_duty_incharge1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:layout_marginTop="5dp"/>
+
+        <Spinner
+            android:id="@+id/add_duty_incharge2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"/>
+
+        <EditText
+            android:id="@+id/add_duty_remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="5dp"
+            android:inputType="textNoSuggestions|textMultiLine"
+            android:hint="Remarks"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_new_duty_btn"
+            android:layout_marginTop="5dp"
+            android:text="Add Duty"
+            android:background="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+</LinearLayout>

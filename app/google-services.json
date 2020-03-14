@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "859433590270",
+    "firebase_url": "https://examdutyalterationhelper.firebaseio.com",
+    "project_id": "examdutyalterationhelper",
+    "storage_bucket": "examdutyalterationhelper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859433590270:android:60b6c61de49cf7a70c74af",
+        "android_client_info": {
+          "package_name": "com.example.android.examdutyalterationhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859433590270-jrkn51eookt5akvvrbts8sa95i81lp22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.examdutyalterationhelper",
+            "certificate_hash": "a633cee13b1b43777c6ce708227137c8ad013404"
+          }
+        },
+        {
+          "client_id": "859433590270-rflaa5u32d0lqfkd7ern6fdv327rjuie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2Qxn5Q4hmJWzUQaSJ38RKfMTIOOGI6sU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859433590270-rflaa5u32d0lqfkd7ern6fdv327rjuie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

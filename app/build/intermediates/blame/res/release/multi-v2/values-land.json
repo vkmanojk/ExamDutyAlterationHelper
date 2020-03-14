@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "/home/vkmanojk/.gradle/caches/transforms-2/files-2.1/5162c6af7a1777d28426a725ea387ee8/appcompat-1.1.0/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/home/vkmanojk/.gradle/caches/transforms-2/files-2.1/252cd4872a101d95f65e4037bbd6a380/material-1.1.0-alpha07/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,128,198,270,340",
+                        "endLines": "2,3,4,5,9",
+                        "endColumns": "72,69,71,69,10",
+                        "endOffsets": "123,193,265,335,507"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "264,337,407,479,549",
+                        "endLines": "5,6,7,8,12",
+                        "endColumns": "72,69,71,69,10",
+                        "endOffsets": "332,402,474,544,716"
+                    }
+                }
+            ]
+        }
+    ]
+}

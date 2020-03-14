@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.android.examdutyalterationhelper.MainActivityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-14T13:38:58" hostname="manojkumar" time="0.003">
+  <properties/>
+  <testcase name="classcheck" classname="com.example.android.examdutyalterationhelper.MainActivityTest" time="0.003"/>
+  <system-out><![CDATA[Testcase: 1 inititiated
+Testcase: 1 compiled 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

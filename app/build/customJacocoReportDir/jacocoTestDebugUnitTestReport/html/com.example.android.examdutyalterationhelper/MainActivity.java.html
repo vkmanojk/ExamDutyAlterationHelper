@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.example.android.examdutyalterationhelper</a> &gt; <span class="el_source">MainActivity.java</span></div><h1>MainActivity.java</h1><pre class="source lang-java linenums">package com.example.android.examdutyalterationhelper;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+<span class="nc" id="L25">public class MainActivity extends AppCompatActivity {</span>
+
+    protected EditText emailEditText,pwdEditText;
+    protected TextView signIn,forgotPwd;
+    protected FloatingActionButton floatButtonSignIn;
+    private FirebaseAuth mAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="nc" id="L34">        super.onCreate(savedInstanceState);</span>
+<span class="nc" id="L35">        setContentView(R.layout.activity_main);</span>
+
+<span class="nc" id="L37">        emailEditText = findViewById(R.id.email_signin);</span>
+<span class="nc" id="L38">        pwdEditText = findViewById(R.id.pwd_signin);</span>
+<span class="nc" id="L39">        signIn = findViewById(R.id.signin_textview_loginpage);</span>
+<span class="nc" id="L40">        forgotPwd = findViewById(R.id.forgotpwd_textview_loginpage);</span>
+<span class="nc" id="L41">        floatButtonSignIn = findViewById(R.id.float_button_signin);</span>
+
+<span class="nc" id="L43">        mAuth = FirebaseAuth.getInstance();</span>
+
+<span class="nc" id="L45">        floatButtonSignIn.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L48">                userSignIn();</span>
+<span class="nc" id="L49">            }</span>
+        });
+
+<span class="nc" id="L52">        forgotPwd.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="nc" id="L55">                Intent i = new Intent(MainActivity.this,ForgotPassword.class);</span>
+<span class="nc" id="L56">                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);</span>
+<span class="nc" id="L57">                startActivity(i);</span>
+<span class="nc" id="L58">            }</span>
+        });
+<span class="nc" id="L60">    }</span>
+
+    public void userSignIn(){
+<span class="nc" id="L63">        final String email = emailEditText.getText().toString().trim();</span>
+<span class="nc" id="L64">        final String pwd = pwdEditText.getText().toString().trim();</span>
+
+<span class="nc" id="L66">        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference(&quot;Users&quot;);</span>
+
+<span class="nc bnc" id="L68" title="All 2 branches missed.">        if(email.isEmpty()){</span>
+<span class="nc" id="L69">            emailEditText.setError(&quot;Email Is Required&quot;);</span>
+<span class="nc" id="L70">            emailEditText.requestFocus();</span>
+<span class="nc" id="L71">            return;</span>
+        }
+
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){</span>
+<span class="nc" id="L75">            emailEditText.setError(&quot;Enter A Valid Email Address&quot;);</span>
+<span class="nc" id="L76">            emailEditText.requestFocus();</span>
+<span class="nc" id="L77">            return;</span>
+        }
+
+<span class="nc bnc" id="L80" title="All 2 branches missed.">        if(pwd.isEmpty()){</span>
+<span class="nc" id="L81">            pwdEditText.setError(&quot;Password Is Required&quot;);</span>
+<span class="nc" id="L82">            pwdEditText.requestFocus();</span>
+<span class="nc" id="L83">            return;</span>
+        }
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if(pwd.length()&lt;6){</span>
+<span class="nc" id="L86">            pwdEditText.setError(&quot;Password Should Be At Least 6 Characters&quot;);</span>
+<span class="nc" id="L87">            pwdEditText.requestFocus();</span>
+<span class="nc" id="L88">            return;</span>
+        }
+
+<span class="nc" id="L91">        mAuth.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener&lt;AuthResult&gt;() {</span>
+            @Override
+            public void onComplete(@NonNull Task&lt;AuthResult&gt; task) {
+<span class="nc bnc" id="L94" title="All 2 branches missed.">                if(task.isSuccessful()){</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">                    if(mAuth.getCurrentUser().isEmailVerified()){</span>
+<span class="nc" id="L96">                        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {</span>
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+<span class="nc" id="L99">                                String e = email.split(&quot;@&quot;)[0];</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">                                if(dataSnapshot.child(e).exists()){</span>
+<span class="nc" id="L101">                                    Users user = dataSnapshot.child(e).getValue(Users.class);</span>
+<span class="nc" id="L102">                                    Toast.makeText(MainActivity.this, &quot;Logged In Successfully&quot;, Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L103">                                    Prevalent.currentOnlineUser = user;</span>
+<span class="nc" id="L104">                                    Prevalent.UserEmail = user.email;</span>
+<span class="nc" id="L105">                                    Intent i = new Intent(MainActivity.this,HomeActivity.class);</span>
+<span class="nc" id="L106">                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);</span>
+<span class="nc" id="L107">                                    startActivity(i);</span>
+                                }
+<span class="nc" id="L109">                            }</span>
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+<span class="nc" id="L114">                            }</span>
+                        });
+                    }else{
+<span class="nc" id="L117">                        Toast.makeText(getApplicationContext(),&quot;Please Verify Your Email&quot;,Toast.LENGTH_LONG).show();</span>
+                    }
+                }else {
+<span class="nc" id="L120">                    Toast.makeText(getApplicationContext(),&quot;Invalid Credentials!!!&quot;,Toast.LENGTH_LONG).show();</span>
+                }
+<span class="nc" id="L122">            }</span>
+        });
+<span class="nc" id="L124">    }</span>
+
+    public void OpenSignUpPage(View view) {
+<span class="nc" id="L127">        startActivity(new Intent(MainActivity.this,SignUpActivity.class));</span>
+<span class="nc" id="L128">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
