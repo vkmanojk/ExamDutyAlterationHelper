@@ -17,6 +17,15 @@ addons:
 script:
 - sonar-scanner -D sonar.host.url=http://localhost:9000/ -D sonar.login=3625f7b5458ba18144ae4210d9dcc948d1be4e6b -X
 
+addons:
+  sonarcloud:
+    organization: "vkmanojk"
+    token:
+      secure: 3625f7b5458ba18144ae4210d9dcc948d1be4e6b # encrypted value of your token
+
+script:
+  - ./gradlew sonarqube
+
 
 android:
   components:
