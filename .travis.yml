@@ -47,3 +47,5 @@ before_script:
 
 script:
   - ./gradlew clean build
+  - ./gradlew clean test jacocoTestReport sonarqube -Dsonar.host.url=http://localhost:9000 --info -stacktrace
+
