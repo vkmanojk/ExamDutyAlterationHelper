@@ -7,6 +7,16 @@ env:
   - ANDROID_API_LEVEL=28
   - ANDROID_BUILD_TOOLS_VERSION=28.0.3
   - ANDROID_ABI=armeabi-v7a
+  - secure: 3625f7b5458ba18144ae4210d9dcc948d1be4e6b
+  - SONAR_HOST_URL=http://localhost:9000
+  
+
+addons:
+ sonarqube: true
+
+script:
+- sonar-scanner -D sonar.host.url=http://localhost:9000/ -D sonar.login=3625f7b5458ba18144ae4210d9dcc948d1be4e6b -X
+
 
 android:
   components:
@@ -37,4 +47,3 @@ before_script:
 
 script:
   - ./gradlew clean build
-
