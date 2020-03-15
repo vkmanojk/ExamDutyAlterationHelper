@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.sonarqube'
 apply plugin: 'jacoco-android'
-
+ 
 android {
     compileSdkVersion 28
     defaultConfig {
