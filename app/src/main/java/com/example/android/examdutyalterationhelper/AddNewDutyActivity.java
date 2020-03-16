@@ -37,6 +37,8 @@ public class AddNewDutyActivity extends AppCompatActivity {
     Button addNewDutyBtn;
     private DatabaseReference databaseDuty,databaseUsers;
     private Calendar myCalendar = Calendar.getInstance();
+    Boolean edit = false;
+    String dname = "",stime="",etime="",dte="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,15 @@ public class AddNewDutyActivity extends AppCompatActivity {
 
         databaseDuty = FirebaseDatabase.getInstance().getReference("Duty");
         databaseUsers = FirebaseDatabase.getInstance().getReference("Users");
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle.containsKey("Edit")){
+            edit = bundle.getBoolean("Edit");
+            dname = bundle.getString("Dname");
+            stime = bundle.getString("STime");
+            etime = bundle.getString("ETime");
+            dte = bundle.getString("Date");
+        }
 
         databaseUsers.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,6 +93,7 @@ public class AddNewDutyActivity extends AppCompatActivity {
             }
         });
 
+
         startTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,13 +104,14 @@ public class AddNewDutyActivity extends AppCompatActivity {
                 mTimePicker = new TimePickerDialog(AddNewDutyActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        startTime.setText( selectedHour + ":" + selectedMinute);
+                        startTime.setText(selectedHour + ":" + selectedMinute);
                     }
                 }, hour, minute, true);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
             }
         });
+
 
         endTime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,13 +123,14 @@ public class AddNewDutyActivity extends AppCompatActivity {
                 mTimePicker = new TimePickerDialog(AddNewDutyActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        endTime.setText( selectedHour + ":" + selectedMinute);
+                        endTime.setText(selectedHour + ":" + selectedMinute);
                     }
                 }, hour, minute, true);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
             }
         });
+
 
         final DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
@@ -134,6 +148,7 @@ public class AddNewDutyActivity extends AppCompatActivity {
 
         };
 
+
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,7 +158,21 @@ public class AddNewDutyActivity extends AppCompatActivity {
             }
         });
 
+
         addNewDutyBtn = (Button) findViewById(R.id.add_new_duty_btn);
+
+        if(edit){
+            addNewDutyBtn.setText("Update Duty");
+            examDetail.setText(dname);
+            examDetail.setEnabled(false);
+            startTime.setText(stime);
+            startTime.setEnabled(false);
+            endTime.setText(etime);
+            endTime.setEnabled(false);
+            date.setText(dte);
+            date.setEnabled(false);
+
+        }
         addNewDutyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,18 +228,20 @@ public class AddNewDutyActivity extends AppCompatActivity {
         }
 
         Duties duties = new Duties(startTimeEditText,endtimeEditText,dutyDetailEditText,incharge1EditText,incharge2EditText,remarksEditText,dutyDateEditText);
-        databaseDuty.child(dutyDetailEditText).setValue(duties).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(),"Duty Added Successfully",Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(AddNewDutyActivity.this,HomeActivity.class);
-                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(i);
-                }else{
-                    Toast.makeText(getApplicationContext(),"Duty Not Added",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+
+         databaseDuty.child(dutyDetailEditText).setValue(duties).addOnCompleteListener(new OnCompleteListener<Void>() {
+             @Override
+             public void onComplete(@NonNull Task<Void> task) {
+                 if (task.isSuccessful()) {
+                     Toast.makeText(getApplicationContext(), "Duty Added Successfully", Toast.LENGTH_SHORT).show();
+                     Intent i = new Intent(AddNewDutyActivity.this, HomeActivity.class);
+                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                     startActivity(i);
+                 } else {
+                     Toast.makeText(getApplicationContext(), "Duty Not Added", Toast.LENGTH_LONG).show();
+                 }
+             }
+         });
+
     }
 }

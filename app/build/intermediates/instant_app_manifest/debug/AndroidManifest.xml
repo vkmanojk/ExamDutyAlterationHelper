@@ -24,9 +24,8 @@
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/teacher"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" >
         <activity android:name="com.example.android.examdutyalterationhelper.RescheduleDutyActivity" />
         <activity android:name="com.example.android.examdutyalterationhelper.AddNewDutyActivity" />

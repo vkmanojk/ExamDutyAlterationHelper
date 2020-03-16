@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,7 +26,7 @@ public class RescheduleDutyActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    DatabaseReference rescheduleDutiesRef;
+    DatabaseReference rescheduleDutiesRef,databaseDuty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,8 @@ public class RescheduleDutyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reschedule_duty);
 
         rescheduleDutiesRef = FirebaseDatabase.getInstance().getReference().child("Reschedule Duty");
+        databaseDuty = FirebaseDatabase.getInstance().getReference("Duty");
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_menu_reschedule);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -62,11 +65,10 @@ public class RescheduleDutyActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         CharSequence option[] = new CharSequence[]{
-                                "Yes",
+                                "Edit",
                                 "No"
                         };
 
-                        Log.e("HELLO","Hi");
                         AlertDialog.Builder builder = new AlertDialog.Builder(RescheduleDutyActivity.this);
                         builder.setTitle("Accept Reschedule");
 
@@ -78,6 +80,14 @@ public class RescheduleDutyActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()){
+                                                Intent i = new Intent(RescheduleDutyActivity.this, AddNewDutyActivity.class);
+                                                i.putExtra("Edit",true);
+                                                i.putExtra("Dname",model.getDutyName());
+                                                i.putExtra("STime",model.getStartTime());
+                                                i.putExtra("ETime",model.getEndtime());
+                                                i.putExtra("Date",model.getDutyDate());
+                                                startActivity(i);
+
                                                 Toast.makeText(RescheduleDutyActivity.this,"Request Accepted",Toast.LENGTH_SHORT).show();
                                             }else {
                                                 Toast.makeText(RescheduleDutyActivity.this,"Request Not Accepted",Toast.LENGTH_SHORT).show();

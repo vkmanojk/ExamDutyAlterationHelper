@@ -33,6 +33,7 @@ dependencies {
     implementation 'io.paperdb:paperdb:2.6'
     implementation 'com.ornach.nobobutton:nobobutton:1.6'
     androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.firebase:firebase-core:17.2.2'
     implementation 'com.google.firebase:firebase-database:19.2.0'

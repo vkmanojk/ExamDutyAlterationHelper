@@ -1401,9 +1401,10 @@ int drawable notification_tile_bg 0x7f0700a7
 int drawable notify_panel_notification_icon_bg 0x7f0700a8
 int drawable round_arrow_forward_24 0x7f0700a9
 int drawable side_nav_bar 0x7f0700aa
-int drawable test_custom_background 0x7f0700ab
-int drawable tooltip_frame_dark 0x7f0700ac
-int drawable tooltip_frame_light 0x7f0700ad
+int drawable teacher 0x7f0700ab
+int drawable test_custom_background 0x7f0700ac
+int drawable tooltip_frame_dark 0x7f0700ad
+int drawable tooltip_frame_light 0x7f0700ae
 int id ALT 0x7f080000
 int id CTRL 0x7f080001
 int id FUNCTION 0x7f080002

@@ -172,7 +172,7 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/
 	android:label
 		ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:11:9-46
 	android:icon
 		ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
@@ -180,7 +180,7 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/vkmanojk/.gradle/
 	android:theme
 		ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:13:9-70
 activity#com.example.android.examdutyalterationhelper.RescheduleDutyActivity
-ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:14:9-69
+ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:14:9-60
 	android:name
 		ADDED from /home/vkmanojk/AndroidStudioProjects/ExamDutyAlterationHelper/app/src/main/AndroidManifest.xml:14:19-57
 activity#com.example.android.examdutyalterationhelper.AddNewDutyActivity
