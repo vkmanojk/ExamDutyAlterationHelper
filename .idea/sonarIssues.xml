@@ -148,6 +148,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/AddNewDutyActivityTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/DutiesTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/DutyViewHolderTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/ForgotPasswordTest.java">
           <value>
             <set />
@@ -158,12 +173,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/ItemClickListenerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/MainActivityTest.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/PrevalentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/RescheduleDutiesTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/RescheduleDutyActivityTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/example/android/examdutyalterationhelper/RescheduleDutyViewHolderTest.java">
           <value>
             <set />
           </value>
