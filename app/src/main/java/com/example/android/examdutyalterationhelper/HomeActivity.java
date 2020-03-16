@@ -75,7 +75,9 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_duty:
-                startActivity(new Intent(this, AddNewDutyActivity.class));
+                Intent x = new Intent(this, AddNewDutyActivity.class);
+                x.putExtra("Edit",false);
+                startActivity(x);
                 return true;
             case R.id.view_reschedule_requests:
                 startActivity(new Intent(this, RescheduleDutyActivity.class));
